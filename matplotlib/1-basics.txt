@@ -1,0 +1,19 @@
+# to import matplotlib
+import matplotlib.pyplot as plt 
+
+# to create a plot
+plt.plot(x, y)
+
+# set labels for x and y
+plt.xlabel('X Axis')
+plt.ylabel('Y Axis')
+
+# set the limits
+plt.xlim(x.min(), x.max())
+plt.ylim(x.min(), x.max())
+
+# set a title
+plt.title('Title')
+
+# save a plot
+plt.savefig('plots/firstplot.png')

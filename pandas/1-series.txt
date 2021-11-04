@@ -1,0 +1,16 @@
+# A series is an array that holds an named index
+
+# to import pandas
+import pandas as pd
+
+# to create a series
+pd.Series(data, index)
+
+# or if you have a map
+pd.Series(map)
+
+# to see the keys of your series
+.keys()
+
+# to add series with a specific fill value
+s1.add(s1, fill_value=0)

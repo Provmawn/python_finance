@@ -1,0 +1,8 @@
+# installation of jupyter notebook
+conda install -c conda-forge notebook
+
+# running it in your current directory on WSL2
+jupyter notebook --port=8889 --no-browser
+
+# navigate to 
+localhost

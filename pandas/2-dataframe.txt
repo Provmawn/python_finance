@@ -1,0 +1,96 @@
+# a data frame is a bunch of series with the same index
+
+# to create a dataframe
+df.DataFrame(data, index, columns)
+
+# to get some info about a dataframe
+df.info()
+
+# to get index or column information
+df.columns
+df.index
+
+# to get the top n results
+df.head(n)
+
+# to get some simple statistical information
+df.describe()
+
+# we can transpose our dataframe after we describe if we wanted to
+df.describe().transpose()
+
+# we can add dataframe columns together
+df['col1'] + df['col2']
+
+# we can create a new column using what we by adding them
+df['new_col'] = df['col1'] + df['col2']
+
+# to remove a row or column we use (default axis=0)
+df.drop('row name', axis=0)
+
+# we can set a column to an index with
+df.set_index(index)
+
+# we can reset the index to another index with
+df.reset_index(index)
+
+# if we wanted to grab a row, we can use (loc, iloc)
+df.loc[0]
+df.iloc['label']
+
+# append to a dataframe
+df.append(row)
+
+# we can look for specific row values in a column
+df['col'].isin(['value1', 'value2'])
+
+# we can use apply function to do a function to a single column
+df = df['col'].apply(some_function)
+
+# we can run a function on several columns with np.vectorize
+np.vectorize(some_function)(df['col1'], df['col2'])
+
+# we can sort a data frame in ascending or descending order
+df.sort_values(column, ascending=True)
+
+# we can get the count of all values
+df['col'].value_counts()
+
+# to get all of the unique cols
+df['day'].unique()
+
+# to get the number of unique cols
+df['day'].nunique()
+
+# to replace a value in a row
+df['col'].replace(['item1','item2'],['i1','i2'])
+
+# a better way to do a replace with mulitple columns with with a map
+mymap = {'Male':'M', 'Female':'F'}
+df['gender'].map(mymap)
+
+# create a list of duplicated
+df['date'].duplicated()
+
+# drop duplicates
+df['date'].drop_duplicates()
+
+# find the nlargest or nsmallest of a column
+df.nlargest(2, 'tip') 
+df.nsmallest(2, 'tip') 
+
+# we can sample rows
+df.sample(5)
+
+# or we can sample by a fraction of the dataframe
+df.sample(frac=0.1)
+
+# we can concatinate dataframes with
+pd.concat([one, two], axis=1)
+
+# we can join dataframes, similar to how its done in SQL
+pd.merge(registrations, logins, how='inner', on='name')
+
+# when we read in a csv, we can set the index column
+pd.read_csv('something.csv', index_col=0)
+

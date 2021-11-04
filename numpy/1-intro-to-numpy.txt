@@ -1,0 +1,55 @@
+# ensure numpy is installed
+conda install numpy
+
+# import numpy
+import numpy as np
+
+# convert to numpy array
+np.array(arr)
+
+# create numpy range
+np.arange(start,stop,step)
+
+# create zeros/ones list/matrix
+np.zeros((x,y))
+np.ones((x,y))
+
+# create a linear space
+np.linspace(start, end, count)
+
+# create an identity matrix
+np.eye(n)
+
+# np.<TAB> to see availabe functions
+# np.random.rand<SHIFT-TAB> to see a description for the function
+
+# to get a random uniform distribution
+np.random.rand(rows, cols)
+
+# to get a random uniform int distribution
+np.random.randint(start, end, count)
+
+# to get the same random distribution we can seed it
+np.random.seed(4)
+np.random.randint(0, 10, 10)
+
+# we can reshape a 1D array to a 2D array with reshape
+arr.reshape(n, n)
+
+# we can find the max and min, and their index on a distribution with
+.max()
+.min()
+.argmax()
+.argmin()
+
+# to check the datatype of a distribution run this command
+.dtype
+
+# to check the dimensions run this
+.shape
+
+# numpy has broadcasting reassignment
+arr[0:5] = 100
+
+# slicing an array and changing the slice will affect the original
+mat[2:,1:]
